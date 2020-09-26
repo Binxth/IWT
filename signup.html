@@ -4,7 +4,10 @@
 <title>BCC Online Teacher Trainer</title>
 <link rel="stylesheet" type="text/css" href="style/style.css">
 <link rel="stylesheet" type="text/css" href="style/headerfooter.css">   
+<link rel="stylesheet" type="text/css" href="style/signup.css">
 <script src="script/javascript.js"></script>
+<script src="script/signup.js"></script>
+
 </head>
 <body>
 
@@ -29,7 +32,111 @@
 
 
 <br> 
+    
+<div class="Hbanner">
+    <br>
+    <h1> Sign Up Here </h1>
+    </div>
+    <br>
+    <div style="margin-left: 20px;width: 10%; margin-top: 10px">
+    
+    <img src="images/logo2.png" style="width:120px;height:120px;" >
+    
+    
+    
+</div>
+   
+    <h4 style=" margin-left: 140px; margin-top: -60px;">Create Your BCC Teacher Training Account</h4>
+    
 
+
+    
+    <img src="images/signUpIMG.png" style="width: 900px;height: 570px; position: absolute; right: 30px;">
+ 
+<br>
+    
+    
+    <div style="margin-left: 40px;">
+        <form onsubmit="return submitted(this);">
+    <label for="fname">First name:</label><br>
+    <input type="text" id="fname" name="fname" placeholder="Enter First Name" required>
+<br>
+<br>
+    
+    <label for="lname" >Last Name:</label><br>
+    <input type="text"  id="lname" name="lname" placeholder="Enter Last Name" required>
+<br>    
+<br>
+    
+    <label for="email">E-mail address:</label><br>
+    <input type="email" id="email" name="email" placeholder="Enter E-mail Address" size="35" required>
+        
+<br>    
+<br>
+        
+    <label for="pass">Password:</label><br>
+    <input type="password" id="password" name="pass" placeholder="Enter Password" required>
+<br>    
+<br>
+    
+ 
+    <label for="Repass" >Confirm Password:</label><br>
+    <input type="password"  id="rePassword" name="Repass" placeholder="Re-enter the Password" onkeyup="passwordTypeCheck()" required>
+<br>    
+<br>
+    
+    <label for="Mnum">Mobile Number:</label><br>
+    <input type="text" id="Mnum" name="Mnum" placeholder="+94 7X XXXX XXX" required>
+<br>    
+<br>
+        
+    <label for="sch">Currently Teaching School ( Optional ):</label><br>
+    <input type="text" id="sch" name="sch" placeholder="School/College/Institute">
+<br>    
+<br>
+    
+    <label for="payment" style="color:red">Payment Reference Number:</label><br>
+    <input type="text" id="payment" name="payment" placeholder="BCC-XXX-XXXX-XX" required>
+<br>    
+<br>
+        
+    Register As, <br><br>
+        
+    <input type="radio" id="PreschoolTeacher" name="RegisterAs" value="PreschoolTeacher" required>
+    <label for="PreschoolTeacher">Preschool Teacher</label><br>
+        
+    <input type="radio" id="PrimaryTeacher" name="RegisterAs" value="PrimaryTeacher" required>
+    <label for="PrimaryTeacher">Primary Teacher</label><br>
+        
+    <input type="radio" id="OLAL" name="RegisterAs" value="OLAL" required>
+    <label for="OLAL">Ordinary Level or Advanced Level Teachher</label><br>
+        
+    <input type="radio" id="Lecturer" name="RegisterAs" value="Lecturer" required>
+    <label for="Lecturer">Lecturer</label><br>
+        
+    <input type="radio" id="ContentWriter" name="RegisterAs" value="ContentWriter" required>
+    <label for="ContentWriter">Content Writer</label><br>
+        
+    <br><br>
+    
+    <input type="checkbox" id="agreement1" name="agreement1" value="agreement1" >
+    <label for="agreement1"> Sign me up for the BCC Acedemy Weekly Newsletter.</label>
+
+<br>    
+<br>
+    <input type="checkbox" id="terms_and_conditions" value="1" onclick="terms_changed(this)" required>
+    <label for="agreement2"> I Agree to BCC Teacher Training Academy's Terms & Conditions.</label>
+
+<br>    
+<br>
+
+
+    
+            <input type="submit" id="submit_button" onclick="submitAlert()" disabled = "true" class="button">
+            </form>
+    </div>
+
+    
     <br> 
     <br> 
 
