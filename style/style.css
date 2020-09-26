@@ -169,22 +169,22 @@ button{
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 50%;
+  width: 100%;
   height: 50%;
 }
 
 .nxtBtn	{
 	position: absolute;
-	top: 250px;
-	left:25%;
+	top: 220px;
+	left:1%;
 	border-style: none;
 
 }
 
 .prevBtn	{
 	position:absolute;
-	top: 250px;
-	right: 26%;
+	top: 220px;
+	right: 1%;
 	border-style: none;
 }
 
@@ -217,6 +217,13 @@ div.boxEditPostNew	{
 	box-sizing: border-box;
 	width: 33.33%;
 	float: left;
+}
+
+.courses{
+margin:auto;
+width: 20%;
+margin-top: 25px;
+float: left
 }
 
 
