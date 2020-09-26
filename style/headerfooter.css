@@ -1,0 +1,147 @@
+.logpic{
+    float:right;
+    height:60px;
+    width:60px;
+    position: absolute;
+    right:10px;
+}
+
+.search{
+    
+    height:40px;
+    width:200px;
+    position: absolute;
+    right: 210px;
+    top:30px;
+    border-radius: 50px;
+    box-sizing: border-box;
+
+}
+
+.regbutton{
+    
+    
+    padding: 10px;
+    line-height: 13px;
+    margin: 0;
+    height: 40px;
+    width: 100px;
+    position: absolute;
+    right: 80px;
+    top:3px;
+    background-color:darkgrey;
+    box-sizing: border-box;
+
+}
+
+.logbutton{
+    
+    padding: 10px;
+    line-height: 13px;
+    margin: 0;
+    height: 40px;
+    width: 100px;
+    position: absolute;
+    right: 80px;
+    top:48px;
+    background-color:dodgerblue;
+    box-sizing: border-box;
+}
+
+
+.header {
+  overflow: hidden;
+  background-color: #f1f1f1;
+  padding: 20px 10px;
+}
+
+
+.header .logo{
+    float:left;
+    height:80px;
+    width:80px;
+    position: absolute;
+    top:0px;
+    left:15px;
+}
+
+
+.header a {
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px; 
+  line-height: 25px;
+  border-radius: 15px;
+  margin-left:40px;
+}
+
+.header a.logo {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.header a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.header a.active {
+  background-color: dodgerblue;
+  color: white;
+}
+
+.header-left {
+  float: left;
+}
+
+.logimg{
+    align-self: center;
+    height:60px;
+    width:60px;
+    
+    right:10px;
+}
+
+
+button{
+    background-color: dodgerblue;
+    color: white;
+    padding: 15px;
+    border-radius: 15px;
+    font-size: 18px;
+}
+
+
+
+.footer {
+    position: relative;
+    width: 100%;
+    text-align: center;
+	background-color: #f1f1f1;
+    overflow:hidden;
+    padding: 5px 0px;
+  margin-bottom:-200px;
+  }
+            
+
+.verticalBar {
+  border-left: 2px solid #454545;
+  height: 220px;
+  position: relative;
+  float: right;   
+    
+}
+
+div.containerPostNew {
+	width: 100%;
+
+}
+
+div.boxEditPostNew	{
+	box-sizing: border-box;
+	width: 33.33%;
+	float: left;
+}
