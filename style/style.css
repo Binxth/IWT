@@ -91,6 +91,60 @@ margin-top: 25px;
 float: left
 }
 
+.courseimage{
+
+width:200px;
+height:200;
+border-radius: 15px;
+
+}
+
+
+.reviews{
+margin-left: 30px;
+width: 25%;
+height: 125px;
+float: left;
+background-color: lightgray;
+border-radius: 5px;
+}
+
+.payment-header{
+    width: 100%;
+    overflow: hidden;
+    background-color:dimgrey;
+    margin: auto;
+
+}
+
+.cardpayment{
+    width: 33%;
+    height: 600px;
+    border: 3px groove ;
+    margin-left: 150px;
+    margin-bottom: 20px;
+    float: left
+}
+
+.paypal{
+    width: 30%;
+    height: 40px;
+    margin: auto;
+    margin-left: 75px;
+    float: left;
+    padding: 280px 0;
+}
+
+.bttn{
+
+    background-color: dimgrey;
+    border: none;
+    color: white;
+    padding: 5px 32px;
+    font-size: 20px;
+    margin: 4px 2px;
+}
+
 
 
 
