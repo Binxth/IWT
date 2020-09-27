@@ -39,39 +39,43 @@
 <div class="cardpayment">
 <h2 style="color:dodgerblue">Card Payment</h2>
 <p>Course Package -  Rs.2000</p>
-<form>
+
+<form name="payment">
       
         <div >
+        
             <h3>Billing Address</h3>
             
             <table>
+            
             <tr>
+            
             <td><label for="fullname"> Full Name</label></td>
-            <td><input type="text" id="fullname" name="fname" placeholder="Someone someone"></td>
+            <td><input type="text" id="fullname" name="fname" placeholder="Someone someone" class="input-design" style="width: 250px;"  required></td>
             </tr>
           
             <tr>
             <td><label for="email">Email</label></td>
-            <td> <input type="text" id="email" name="email" placeholder="random@gmail.com"> </td>
+            <td> <input type="email" id="email" name="email" placeholder="random@gmail.com" class="input-design" pattern="[a-ZA-Z]+@[a-zA-Z]+\.[a-zA-Z]{2}" required> </td>
             </tr>
 
             <tr>
             <td><label for="adrs"> Address</label></td>
-            <td><input type="text" id="adrs" name="address" placeholder="No.3/C, Jayawardanapura"></td>
+            <td><input type="text" id="adrs" name="address" placeholder="No.3/C, Jayawardanapura" class="input-design" style="width: 250px;" required></td>
             </tr>
             
             <tr>
             <td><label for="city"> City</label> </td>
-            <td><input type="text" id="city" name="city" placeholder="Colombo">  </td>
+            <td><input type="text" id="city" name="city" placeholder="Colombo" class="input-design" style="width: 75px;" required>  </td>
             </tr>
             
             <tr>
             <td> <label for="zip">Zip</label></td>
-            <td><input type="text" id="zip" name="zip" placeholder="11000"></td>
+            <td><input type="text" id="zip" name="zip" placeholder="11000" class="input-design" style="width: 50px;" required></td>
             </tr>
 
             <tr>
-            <td><input type="checkbox" checked="checked" name="smaddrs"> Shipping address same as billing </td>
+            <td><input type="checkbox" checked="checked" name="smaddrs" class="input-design" required> Shipping address same as billing </td>
             </tr>
             </table>
             
@@ -80,40 +84,40 @@
           <div>
             <h3>Payment</h3>
             <label for="cards">Accepted Cards</label>
-            <img src ="images/payment.png" style="width: 150px; height: 30px;float:right  ">
+            <img src ="images/payment.png" style="width: 150px; height: 30px;float:right  "  >
             <br><br>
             
             <table>
             <tr>
             <td><label for="cardname">Name on Card</label> </td>
-            <td><input type="text" id="cardname" name="crdname" placeholder="Someone Someone"></td>
+            <td><input type="text" id="cardname" name="crdname" placeholder="Someone Someone" class="input-design" style="width: 250px;" onkeyup="checkfilled(this)"></td>
             </tr>
             
             <tr>
             <td><label for="cardnum">Credit card number</label> </td>
-            <td> <input type="text" id="cardnum" name="cardnumber" placeholder="1254-6615-8238-2316"> </td>
+            <td> <input type="text" id="cardnum" name="cardnumber" placeholder="1254-6615-8238-2316" class="input-design" pattern="[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{4}" onchange="checkempty()"> </td>
             </tr>
             
             <tr>
             <td><label for="expmonth">Exp Month</label>
             </td>
-            <td> <input type="text" id="expmonth" name="expmonth" placeholder="December"> </td>
+            <td> <input type="text" id="expmonth" name="expmonth" placeholder="December" style="width: 75px;" class="input-design" pattern="[a-zA-Z]+" onchange="checkempty()"> </td>
             </tr>
             
             <tr>
             <td> <label for="expyear">Exp Year</label></td>
-            <td><input type="text" id="expyear" name="expyear" placeholder="2021"></td>
+            <td><input type="text" id="expyear" name="expyear" placeholder="2021" style="width: 50px;" class="input-design" pattern="[0-9]{4}" onchange="checkempty()" ></td>
             </tr>
             
             <tr>
             <td><label for="cvv">CVV</label></td>
-            <td><input type="text" id="cvv" name="cvv" placeholder="741"> </td>
+            <td><input type="text" id="cvv" name="cvv" placeholder="741" style="width: 30px;" class="input-design" pattern="[0-9]{3}" onchange="checkempty()"> </td>
             </tr>
             </table>  
-              <input type="submit" value="Pay"  onclick="Payment()">
-              <input type="reset" Value="Reset"> 
+              <input type="submit" value="Pay" id="subm" class="input-payreset" onclick="Payment()" disabled/>
+              <input type="reset" Value="Reset" class="input-payreset">  
           </div>
-    
+        <p style="font-size: 10px">*Fill all the boxes inorder to proceed</p>
       </form>
 
 
@@ -169,7 +173,20 @@
 <script>
             function Payment() {
             alert("Payment Successfully Completed");
-            }   
+            }
+            
+            
+           function checkempty(){
+                if(document.payment.cardname.value != '' && document.payment.cardnum.value != '' && document.payment.expmonth.value != '' && document.payment.expyear.value != '' && document.payment.cvv.value != ''&& document.payment.fullname.value != ''&& document.payment.email.value != ''&& document.payment.adrs.value != ''&& document.payment.city.value != '')
+                {
+                    document.payment.subm.disabled=false;
+                }
+                else{
+                    document.payment.subm.disabled=true;
+                }
+            }
+            
+            
         </script>
 
 </body>

@@ -119,11 +119,26 @@ border-radius: 5px;
 
 .cardpayment{
     width: 33%;
-    height: 600px;
+    height: 680px;
     border: 3px groove ;
     margin-left: 150px;
     margin-bottom: 20px;
     float: left
+}
+
+.input-design { 
+      padding: 3px; 
+      margin: 3px 0; 
+      border: 1px solid #ccc; 
+      border-radius: 4px;}
+    
+.input-payreset{
+      padding: 8px;
+      width: 200px;
+      margin-left: 30px; 
+      border: 1px solid #ccc; 
+      border-radius: 4px;
+
 }
 
 .paypal{
