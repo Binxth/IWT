@@ -164,7 +164,7 @@ border-radius: 5px;
 
 .contactus{
     font-family: Arial, Helvetica, sans-serif;
-    padding-bottom: 200px;
+    padding-bottom: 20px;
    
 }
 
@@ -179,9 +179,8 @@ border-radius: 5px;
 
 .contactform{
      font-family: Arial, Helvetica, sans-serif;
-     padding-left: 600px;
-    padding-bottom: 200px;
-    padding-top: 100px;
+     padding-left: 480px;
+    padding-bottom: 10px;
     font-size: 15px;
 }
 

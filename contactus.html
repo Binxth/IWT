@@ -27,10 +27,13 @@
   </div>
 </div>
     
-    <div style = "marigine:auto; width:5o%; margin-bottom: 20px">
+    <div style = "width: 100%;overflow: hidden;background-color:dimgrey;margin: auto; margin-bottom:20px ">
     <center>
-        <h1 style="background-color: dodgerblue">CONTACT US</h1><br><br>
-        </center>
+    <h1 style="color: aliceblue" >CONTACT US</h1>
+    </center>   
+    </div>    
+        
+        
         <div class="contactus">
             
                 <img class="contactimg" style="padding-left:400px;" src="images/phone.jpg">
@@ -43,30 +46,60 @@
             
             
     <div class="contactform"><br>
+    <table>
+            <tr>
+            <td>
             <label for= "username";>Name(Required)   </label>
-            <input type="text" id="username" placeholder="Name" ><br><br>
-                
+            </td>
+            <td>
+            <input type="text" id="username" placeholder="Name" class="input-design" >
+            </td>
+            </tr>
+            
+            <tr>
+            <td>
             <label for= "email";>Email(Required)   </label>
-            <input type="text" id="subject" placeholder="Email"><br><br>
+            </td>
+            <td>
+            <input type="text" id="subject" placeholder="Email" class="input-design">
+            </td>
+            </tr>
         
-            <label for= "subject";>Subject   </label>   
-            <input type="text" id="username" placeholder="Subject"><br><br>
+            <tr>
+            <td>
+            <label for= "subject";>Subject   </label>  
+            </td>
+            <td>
+            <input type="text" id="username" placeholder="Subject" class="input-design">
+            </td>
+            </tr>
         
-            <label for= "message";>Your message</label><br>  
-            <textarea id="message" name="your message" rows="20" cols="50"> 
-        </textarea>
-        
+            <tr>
+            <td>
+            <label for= "message";>Your message</label>
+            </td>
+            <td>
+            <textarea id="message" name="your message" rows="20" cols="50" class="input-design"> 
+            </textarea>
+            </td>
+            </tr>
+            
+            <tr>
+            <td>
             <p>Are you already a customer?</p>
-            <input type= "radio" id="yes" name="check" value="yes">
+            </td>
+            <td>
+            <input type= "radio" id="yes" name="check" value="yes" >
             <label for="yes"> Yes</label>
-        
             <input type= "radio" id="no" name="check" value="no">
-            <label for="No"> No</label><br><br><br>
-        
-            <button class="active" onclick="myFunction()">Submit</button>
+            <label for="No"> No</label>
+            </td>
+            </tr>
+            <tr><td><input type="submit" value="send" id="submit" class="input-payreset" onclick="myFunction()"/></td></tr>
+            
+            </table>
 </div>
         </div>
-    </div>
         
 
   <div class="footer">
