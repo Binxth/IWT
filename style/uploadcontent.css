@@ -1,0 +1,64 @@
+.upload-header{
+    width: 100%;
+    overflow: hidden;
+    background-color:dimgrey;
+    margin: auto;
+
+}
+
+.div-upload{
+    width:75%;
+    padding: 30px 30px 40px 30px;
+    height: 500px;
+    margin: auto;
+   
+}
+
+
+.content-box{
+	        background-color:lightgrey;
+			border-radius: 10px;
+			padding:5px;
+			height:100%;
+			
+}
+
+.select-cat{
+	background-color:dodgerblue;
+	width:100%;
+	border-radius:20px;
+    color: aliceblue
+    
+}
+
+div.cat:hover{
+	background-color: dimgrey;
+    padding: 2px 2px 2px 2px;
+	border-radius:5px;
+}
+
+ul.ul{
+list-style-type:none;
+}
+
+a{
+color: aliceblue;
+text-decoration: none;
+}
+
+.input-design { 
+      padding: 3px; 
+      margin: 3px 0; 
+      border: 2px solid #ccc; 
+      border-radius: 10px;}
+      
+.submit{
+      padding: 8px;
+      width: 200px;
+      margin-left: 30px; 
+      border: 1px solid #ccc; 
+      border-radius: 4px;
+
+}
+
+
