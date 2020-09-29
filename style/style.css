@@ -185,5 +185,13 @@ border-radius: 5px;
 }
 
 
+.aboutimg{
+    align-self: left;
+    margin: left;
+    height:40px;
+    width:40px;
+    right:40px;
+    padding-left:300px;
+}
 
 
