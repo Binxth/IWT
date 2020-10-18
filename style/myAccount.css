@@ -230,7 +230,20 @@
     margin-left: 540px;
     margin-top: 0px;
   }
-
+  .delButton {
+    background-color: red;
+    border: none;
+    color: white;
+    padding: 15px 0px;
+  
+    text-decoration: none;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+    width: 180px;
+    margin-left: 140px;
+    margin-top: 0px;
+  }
   .submitButton {
     background-color: #212121;
     border: none;
