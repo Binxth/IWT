@@ -29,69 +29,53 @@
 
 <div class="upload-header">
  <div style="text-align: center">
-  <h1 style="color: white">Upload Content</h1>
+  <h1 style="color: white">Edit Video</h1>
   </div> 
 </div>
 <br> 
 
-<div class="div-upload">
+<div class="div-editcontent">
 
-<div class="content-box">
-	
-		    <h2 align="center">Choose Content Type</h2>
-				<div class="select-cat">
-					<table align="center">
-						<tr>
-							<th>		
-								<ul class="ul">
-									<center>
-									<div class="cat">
-										<li><a href="uploadcontent.html">Videos</a></li>
-									</div>
-									</center>
-								</ul>
-							</th>
-			
-							<th>		
-								<ul class="ul">
-									<center>
-									<div class="cat">
-										<li><a href="tutorial.html">Tutorials</a></li>
-									</div>
-									</center>
-								</ul>
-							</th>
-                            <th>		
-								<ul class="ul">
-									<center>
-									<div class="cat">
-										<li><a href="#">Teaching Tips</a></li>
-									</div>
-									</center>
-								</ul>
-							</th>
-						<tr>
-					</table> 
-        </div>	
+<div class="edit-content-box">
 
-<div style="width: 75%;margin: auto; margin-top: 25px ">
-<center>
-<h2 style="color: darkslategray">Upload Teaching tips and tricks</h2>
-<form action="tips.php" method="post" enctype="multipart/form-data">
+				
 
-    <label for="caption">Enter a Caption</label><br>
-  <input type="text" id="caption" name="caption" style="width: 400px" class="input-design" ><br><br>
-  
-  <label for="description">Enter the description</label><br>
-  <textarea id="description" name="description" rows="4" cols="60" class="input-design"></textarea><br><br>
-<br>
+<div style="width: 90%;margin: auto; margin-top: 25px ">
+    <?php
     
+		require'config.php';
 
-  <label for="myfile">Select files:</label><br>
-  <input type="file" id="myfile" name="file" multiple class="input-design"><br><br>
-  <input type="submit" name="submit" class="submit">
-</form>
-</center>
+        $videoID = $_GET['videoID'];
+		$sql ="SELECT videoID, caption, description,module,file FROM video WHERE videoID ='$videoID'";
+		$result = $con->query($sql);
+
+		while ($row = $result -> fetch_assoc())	{
+
+				echo '<div style="width: 75%;margin: auto; margin-top: 25px ">
+                        <center>
+                        <h2 style="color: darkslategray">Edit Video</h2>
+                        <form action="updateMyVideo.php?videoID='.$row["videoID"].'" method="post" enctype="multipart/form-data">
+
+                            <label for="caption">Enter a Caption</label><br>
+                          <input type="text" id="caption" name="caption" style="width: 400px" class="input-design" value="'.$row["caption"].'"><br><br>
+
+                          <label for="description">Enter the description</label><br>
+                          <textarea id="description" name="description" rows="4" cols="60" class="input-design" >'.$row["description"].'</textarea><br><br>
+                        <br>
+                            <label for="caption">Enter the module (A or B)</label><br>
+                          <input type="text" id="module" name="module" style="width: 75px" class="input-design" value="'.$row["module"].'" ><br><br>
+
+                          <input type="submit" class="submit">
+                        </form>
+                        </center>
+                        </div>
+                        <br>';
+			}
+    $con->close();
+		?>
+
+
+
 </div>
 
 </div>

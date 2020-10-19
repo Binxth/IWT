@@ -92,6 +92,111 @@ float: left
 }
 
 
+.courseimage{
+
+width:200px;
+height:200;
+border-radius: 15px;
+
+}
+
+
+.reviews{
+margin-left: 30px;
+width: 25%;
+height: 125px;
+float: left;
+background-color: lightgray;
+border-radius: 5px;
+}
+
+.payment-header{
+    width: 100%;
+    overflow: hidden;
+    background-color:dimgrey;
+    margin: auto;
+
+}
+
+.cardpayment{
+    width: 33%;
+    height: 680px;
+    border: 3px groove ;
+    margin-left: 150px;
+    margin-bottom: 20px;
+    float: left
+}
+
+.input-design { 
+      padding: 3px; 
+      margin: 3px 0; 
+      border: 1px solid #ccc; 
+      border-radius: 4px;}
+    
+.input-payreset{
+      padding: 8px;
+      width: 200px;
+      margin-left: 30px; 
+      border: 1px solid #ccc; 
+      border-radius: 4px;
+
+}
+
+.paypal{
+    width: 30%;
+    height: 40px;
+    margin: auto;
+    margin-left: 75px;
+    float: left;
+    padding: 280px 0;
+}
+
+.bttn{
+
+    background-color: dimgrey;
+    border: none;
+    color: white;
+    padding: 5px 32px;
+    font-size: 20px;
+    margin: 4px 2px;
+}
+
+    
+
+.contactus{
+    font-family: Arial, Helvetica, sans-serif;
+    padding-bottom: 20px;
+   
+}
+
+.contactimg{
+    align-self: center;
+    height:40px;
+    width:40px;
+    right:40px;
+    padding-left:300px;
+}
+
+
+.contactform{
+     font-family: Arial, Helvetica, sans-serif;
+     padding-left: 480px;
+    padding-bottom: 10px;
+    font-size: 15px;
+}
+
+
+.aboutimg{
+    align-self: left;
+    margin: left;
+    height:40px;
+    width:40px;
+    right:40px;
+    padding-left:300px;
+}
+
+
+
 
 
 

@@ -77,17 +77,21 @@
 <div style="width: 75%;margin: auto; margin-top: 25px ">
 <center>
 <h2 style="color: darkslategray">Upload Tutorials</h2>
-<form action="/action_page.php">
+<form action="tutorial.php" method="post" enctype="multipart/form-data">
 
     <label for="caption">Enter a Caption</label><br>
   <input type="text" id="caption" name="caption" style="width: 400px" class="input-design" ><br><br>
   
   <label for="description">Enter the description</label><br>
   <textarea id="description" name="description" rows="4" cols="60" class="input-design"></textarea><br><br>
+<br>
+    <label for="caption">Enter the module (A or B)</label><br>
+  <input type="text" id="module" name="module" style="width: 75px" class="input-design" ><br><br>
+    
 
   <label for="myfile">Select files:</label><br>
-  <input type="file" id="myfile" name="myfile" multiple class="input-design"><br><br>
-  <input type="submit" class="submit">
+  <input type="file" id="myfile" name="file" multiple class="input-design"><br><br>
+  <input type="submit" name="submit" class="submit">
 </form>
 </center>
 </div>
