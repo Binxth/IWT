@@ -87,19 +87,19 @@ if (isset($_POST['login']))
 <div class="header">
   <a href="#default"></a>
   <div class="header-left">
-   <img class="logo" src="images/logo2.png">
-      <a class="active" href="#home">Home</a>
-      <a href="#study">Study Area</a>
-      <a href="#content">Contents</a>
-      <a href="#pricing">Pricing</a>
-      <a href="#about">About Us</a>
-      <a href="#contact">Contact Us</a>
+  <img class="logo" src="images/logo2.png">
+  <a class="active" href="home.php">Home</a>
+      <a href="content.php">Contents</a>
+      <a href="payment.php">Pricing</a>
+      <a href="aboutus.php">About Us</a>
+      <a href="contactus.php">Contact Us</a>
+      <a href="myAccount.php">My Account</a>
       
       <input class="search" type="text" placeholder="  search here">
 
       <a class="regbutton" href="signup.php">Register</a>
       <a class="logbutton" href="loginTeacher.php">Login</a>
-      <img class="logpic" src="images/usericon.png">    
+      <img class="logpic" src="images/usericon.png">
   </div>
 </div>
    

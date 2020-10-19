@@ -1,10 +1,16 @@
 <?php
+$servername = "localhost";
+$dbusername = "root";
+$dbpassword = "";
+$dbname = "userdb";
+// Creating the connection
+$connection = mysqli_connect($servername, $dbusername, $dbpassword,$dbname);
 
-
-
-$con = new mysqli("localhost","root","","teachertrainer");
-    if ($con->connect_error)    {
-        die("connection failed! ".$con->connect_error);
-    }
-
+//$connection= mysqli_connect('localhost','root','','userdb')
+// Checking the  connection
+if ($connection->connect_error) {
+ die("Connection failed: " . $connection->connect_error);
+}
+//echo "Connected successfully <br>";
 ?>
+

@@ -60,11 +60,7 @@ if (isset($_POST["UPDATE1"])) {
   $fname = $_POST['fname'];
   $lname = $_POST['lname'];
   $Mnum = $_POST['Mnum'];
-  /*$pass = $_POST['pass'];
-    /*$pass = $_POST['Repass'];
 
-    $pass = hash("sha256",$pass); 
-    $pass = trim($pass);*/
 
   $sql = "UPDATE user SET 
             fname='" . $fname . "' , 
@@ -193,15 +189,15 @@ $connection->close();
   <div class="header">
     <a href="#default"></a>
     <div class="header-left">
-      <img class="logo" src="images/logo2.png">
-      <a class="active" href="#home">Home</a>
-      <a href="#study">Study Area</a>
-      <a href="#content">Contents</a>
-      <a href="#pricing">Pricing</a>
-      <a href="#about">About Us</a>
-      <a href="#contact">Contact Us</a>
-
-      <input class="search" type="text" value="  search here">
+    <img class="logo" src="images/logo2.png">
+    <a href="home.php">Home</a>
+      <a href="content.php">Contents</a>
+      <a href="payment.php">Pricing</a>
+      <a href="aboutus.php">About Us</a>
+      <a href="contactus.php">Contact Us</a>
+      <a class="active" href="myAccount.php">My Account</a>
+      
+      <input class="search" type="text" placeholder="  search here">
 
       <!--<a class="regbutton" href="signup.php">Register</a>-->
       <!--<a class="logbutton" href="loginTeacher.php">Login</a>-->
@@ -212,7 +208,7 @@ $connection->close();
 
       if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) //if loggdin
       {
-        //dissaper reg button
+        //disappear reg button
       }
       else
       {
@@ -227,7 +223,8 @@ $connection->close();
       }
       else
       {
-        header("location:loginTeacher.php");
+        //header("location:loginTeacher.php");
+        echo '<a class="logbutton" href="loginTeacher.php">Login</a>';
       }
       /////////////////////////////////////////////////////////////////////////////////////
       ?>
@@ -386,7 +383,7 @@ $connection->close();
   </div>
 
   <br><br><br>
-  <div style="margin-left: 95px;width: 10%; margin-top: 10px">
+  <!--<div style="margin-left: 95px;width: 10%; margin-top: 10px">
 
     <img src="images/myAccPayment.png" style="width:35px;height:22px;">
 
@@ -432,7 +429,7 @@ $connection->close();
   <button class="buttonEnroll">ENROLL</button>
   <br>
   <h4 style="margin-left: 150px; margin-top: 10px;">Diploma in pre-school education</h4><br>
-  <button class="buttonCont">CONTINUE</button>
+  <button class="buttonCont">CONTINUE</button>-->
 
 
 
