@@ -6,6 +6,7 @@ $errors="";
 $msg3="";
 $msg4="";
 $icon="";
+$errorMsg4="";
 
 //check for form submission
 
@@ -35,7 +36,7 @@ if (isset($_POST['login']))
 
 
     $sql = "SELECT * FROM user WHERE email = '{$email}' AND pass ='{$pass}'";
-    $result = $connection->query($sql);
+    $result = $con->query($sql);
 
     if ($result->num_rows > 0) 
     {
@@ -66,7 +67,7 @@ if (isset($_POST['login']))
         $errors="Invalid Login. Please check the email & Password";
     }
     
-    $connection->close();
+    $con->close();
 
 }
 
@@ -94,6 +95,7 @@ if (isset($_POST['login']))
       <a href="aboutus.php">About Us</a>
       <a href="contactus.php">Contact Us</a>
       <a href="myAccount.php">My Account</a>
+      <a style="background-color: red;" class="active" href="TrainerAccount.php">Trainer Dashboard</a>
       
       <input class="search" type="text" placeholder="  search here">
 
@@ -106,6 +108,7 @@ if (isset($_POST['login']))
 <h4 style="margin-left: 750px; margin-top: 10px; color:red;"> <?php echo "$errors"; ?></h4>
 <h3 style="margin-left: 860px; margin-top: 10px; color:#1e90ff;"> <?php echo "$msg4"; ?></h3>
 <h3 style="margin-left: 750px; margin-top: 10px; color:#1e90ff;"> <?php echo "$msg3"; ?></h3>
+<h3 style="margin-left: 750px; margin-top: 10px; color:#1e90ff;"> <?php echo "$errorMsg4"; ?></h3>
 <icon style="margin-left: 850px; margin-top: -10px;"><?php echo $icon; ?></icon>
 
 <div class="form-container">

@@ -18,12 +18,27 @@
       <a href="#pricing">Pricing</a>
       <a href="#about">About Us</a>
       <a href="#contact">Contact Us</a>
+      <a href="myAccount.php">My Account</a>
+      <a style="background-color: red;" class="active" href="TrainerAccount.php">Trainer Dashboard</a>
       
       <input class="search" type="text" value="  search here">
 
       <a class="regbutton" href="#register">Register</a>
       <a class="logbutton" href="#login">Login</a>
-      <img class="logpic" src="images/usericon.png">    
+      <?php 
+      /////////////////////////////////////////////////////////////////////////////////////
+
+      if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) //if loggdin
+      {
+        echo '<img class="logpic" src="images/usergif.gif">';
+      }
+      else
+      {
+        echo '<img class="logpic" src="images/usericon.png">';
+      }
+
+      /////////////////////////////////////////////////////////////////////////////////////
+      ?>  
   </div>
 </div>
 

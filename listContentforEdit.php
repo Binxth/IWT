@@ -1,3 +1,19 @@
+<?php
+session_start();
+
+
+if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true && $_SESSION["RegisterAs"]=="Trainer") //if loggdin only as trainer
+{
+  //stay
+}
+else
+{
+  header("location:loginTrainer.php");
+}
+
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,21 +25,62 @@
 <body>
 
 <div class="header">
-  <a href="#default"></a>
-  <div class="header-left">
-  <img class="logo" src="images/logo2.png">
-      <a class="active" href="#home">Home</a>
-      <a href="#study">Study Area</a>
-      <a href="#content">Contents</a>
-      <a href="#pricing">Pricing</a>
-      <a href="#about">About Us</a>
-      <a href="#contact">Contact Us</a>
+    <a href="#default"></a>
+    <div class="header-left">
+    <img class="logo" src="images/logo2.png">
+    <a href="home.php">Home</a>
+      <a href="content.php">Contents</a>
+      <a href="payment.php">Pricing</a>
+      <a href="aboutus.php">About Us</a>
+      <a href="contactus.php">Contact Us</a>
+      <a href="myAccount.php">My Account</a>
+      <a style="background-color: red;" class="active" href="TrainerAccount.php">Trainer Dashboard</a>
       
       <input class="search" type="text" value="  search here">
 
-      <a class="regbutton" href="#register">Register</a>
-      <a class="logbutton" href="#login">Login</a>
-      <img class="logpic" src="images/usericon.png">    
+      <!--<a class="regbutton" href="#register">Register</a>
+	  <a class="logbutton" href="#login">Login</a>-->
+	  
+	  <?php 
+      /////////////////////////////////////////////////////////////////////////////////////
+
+      if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) //if loggdin
+      {
+        //disappear reg button
+      }
+      else
+      {
+        echo '<a class="regbutton" href="signup.php">Register</a>';
+      }
+
+      
+
+      if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) //if loggdin
+      {
+        echo '<a class="logbutton" href="logout.php">Logout</a>';
+      }
+      else
+      {
+        //header("location:loginTeacher.php");
+        echo '<a class="logbutton" href="loginTeacher.php">Login</a>';
+      }
+      /////////////////////////////////////////////////////////////////////////////////////
+      ?>
+	  
+      <?php 
+      /////////////////////////////////////////////////////////////////////////////////////
+
+      if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) //if loggdin
+      {
+        echo '<img class="logpic" src="images/usergif.gif">';
+      }
+      else
+      {
+        echo '<img class="logpic" src="images/usericon.png">';
+      }
+
+      /////////////////////////////////////////////////////////////////////////////////////
+      ?>  
   </div>
 </div>
 

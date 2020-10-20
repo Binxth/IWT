@@ -28,7 +28,7 @@ $hashed_pass = sha1($pass);
 
 require 'config.php';
 
-$stmt = $connection->prepare("INSERT INTO user (fname,lname,email,pass,Mnum,sch,payment,RegisterAs,agreement1) VALUES (?,?,?,?,?,?,?,?,?)");
+$stmt = $con->prepare("INSERT INTO user (fname,lname,email,pass,Mnum,sch,payment,RegisterAs,agreement1) VALUES (?,?,?,?,?,?,?,?,?)");
 $stmt->bind_param("sssssssss", $fname, $lname, $email,$hashed_pass,$mNum,$sch,$payment,$RegisterAs,$agreement1);
 
         
@@ -44,7 +44,7 @@ if($stmt->execute() == TRUE)
 
 
 $stmt->close();
-$connection->close();
+$con->close();
 }
 ?>
 
@@ -72,6 +72,7 @@ $connection->close();
       <a href="aboutus.php">About Us</a>
       <a class="active" href="contactus.php">Contact Us</a>
       <a href="myAccount.php">My Account</a>
+      <a style="background-color: red;" class="active" href="TrainerAccount.php">Trainer Dashboard</a>
       
       <input class="search" type="text" placeholder="  search here">
 
@@ -166,13 +167,13 @@ $connection->close();
     <label for="PrimaryTeacher">Primary Teacher</label><br>
         
     <input type="radio" id="OLAL" name="RegisterAs" value="OLAL" required>
-    <label for="OLAL">Ordinary Level or Advanced Level Teachher</label><br>
+    <label for="OLAL">Ordinary Level or Advanced Level Teacher</label><br>
         
     <input type="radio" id="Lecturer" name="RegisterAs" value="Lecturer" required>
     <label for="Lecturer">Lecturer</label><br>
         
-    <input type="radio" id="ContentWriter" name="RegisterAs" value="ContentWriter" required>
-    <label for="ContentWriter">Content Writer</label><br>
+    <input type="radio" id="ContentWriter" name="RegisterAs" value="Trainer" required>
+    <label for="Trainer">Trainer</label><br>
         
     <br><br>
     

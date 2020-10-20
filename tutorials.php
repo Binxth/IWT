@@ -1,36 +1,44 @@
 <?php
 session_start();
 
+if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == true && $_SESSION["RegisterAs"] == "Trainer") //if loggdin
+{
+ 
+  //stay
+}
+else
+{
+  header("location:loginTrainer.php");
+}
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
 <title>BCC Online Teacher Trainer</title>
-<link rel="stylesheet" type="text/css" href="style/style.css">
+<link rel="stylesheet" type="text/css" href="style/uploadcontent.css">
 <link rel="stylesheet" type="text/css" href="style/headerfooter.css">
 <script src="script/javascript.js"></script>
 </head>
 <body>
 
 <div class="header">
-  <a href="#default"></a>
-  <div class="header-left">
-  <img class="logo" src="images/logo2.png">
-  <a href="home.php">Home</a>
+    <a href="#default"></a>
+    <div class="header-left">
+    <img class="logo" src="images/logo2.png">
+    <a href="home.php">Home</a>
       <a href="content.php">Contents</a>
       <a href="payment.php">Pricing</a>
       <a href="aboutus.php">About Us</a>
-      <a class="active" href="contactus.php">Contact Us</a>
+      <a href="contactus.php">Contact Us</a>
       <a href="myAccount.php">My Account</a>
       <a style="background-color: red;" class="active" href="TrainerAccount.php">Trainer Dashboard</a>
       
-      <input class="search" type="text" placeholder="  search here">
+      <input class="search" type="text" value="  search here">
 
       <!--<a class="regbutton" href="#register">Register</a>
-      <a class="logbutton" href="#login">Login</a>-->
-
-      <?php 
+	  <a class="logbutton" href="#login">Login</a>-->
+	  <?php 
       /////////////////////////////////////////////////////////////////////////////////////
 
       if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) //if loggdin
@@ -50,12 +58,12 @@ session_start();
       }
       else
       {
+        //header("location:loginTeacher.php");
         echo '<a class="logbutton" href="loginTeacher.php">Login</a>';
       }
       /////////////////////////////////////////////////////////////////////////////////////
       ?>
-
-<?php 
+      <?php 
       /////////////////////////////////////////////////////////////////////////////////////
 
       if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) //if loggdin
@@ -71,82 +79,82 @@ session_start();
       ?>   
   </div>
 </div>
-    
-    <div style = "width: 100%;overflow: hidden;background-color:dimgrey;margin: auto; margin-bottom:20px ">
-    <center>
-    <h1 style="color: aliceblue" >CONTACT US</h1>
-    </center>   
-    </div>    
-        
-        
-        <div class="contactus">
-            
-                <img class="contactimg" style="padding-left:400px;" src="images/phone.jpg">
-                <img class="contactimg" style=padding-left:260px; src="images/email.png">
-                <img class="contactimg" style=padding-left:275px; src="images/location.svg"><br>
-            <a style= "padding-left: 330px;">Ring - 1-800-243-0000</a>
-            <a style= "padding-left: 90px;"> E-mail-contact@bccacedemy.edu.com</a>
-            <a style= "padding-left: 40px;">Location - Torrinton road, Colombo 7</a><br><br><br><br><br>
-        
-            
-            
-    <div class="contactform"><br>
-    <table>
-            <tr>
-            <td>
-            <label for= "username";>Name(Required)   </label>
-            </td>
-            <td>
-            <input type="text" id="username" placeholder="Name" class="input-design" >
-            </td>
-            </tr>
-            
-            <tr>
-            <td>
-            <label for= "email";>Email(Required)   </label>
-            </td>
-            <td>
-            <input type="text" id="subject" placeholder="Email" class="input-design">
-            </td>
-            </tr>
-        
-            <tr>
-            <td>
-            <label for= "subject";>Subject   </label>  
-            </td>
-            <td>
-            <input type="text" id="username" placeholder="Subject" class="input-design">
-            </td>
-            </tr>
-        
-            <tr>
-            <td>
-            <label for= "message";>Your message</label>
-            </td>
-            <td>
-            <textarea id="message" name="your message" rows="20" cols="50" class="input-design"> 
-            </textarea>
-            </td>
-            </tr>
-            
-            <tr>
-            <td>
-            <p>Are you already a customer?</p>
-            </td>
-            <td>
-            <input type= "radio" id="yes" name="check" value="yes" >
-            <label for="yes"> Yes</label>
-            <input type= "radio" id="no" name="check" value="no">
-            <label for="No"> No</label>
-            </td>
-            </tr>
-            <tr><td><input type="submit" value="send" id="submit" class="input-payreset" onclick="myFunction()"/></td></tr>
-            
-            </table>
-</div>
-        </div>
-        
 
+<div class="upload-header">
+ <div style="text-align: center">
+  <h1 style="color: white">Upload Content</h1>
+  </div> 
+</div>
+<br> 
+
+<div class="div-upload">
+
+<div class="content-box">
+	
+		    <h2 align="center">Choose Content Type</h2>
+				<div class="select-cat">
+					<table align="center">
+						<tr>
+							<th>		
+								<ul class="ul">
+									<center>
+									<div class="cat">
+										<li><a href="uploadcontent.html">Videos</a></li>
+									</div>
+									</center>
+								</ul>
+							</th>
+			
+							<th>		
+								<ul class="ul">
+									<center>
+									<div class="cat">
+										<li><a href="tutorials.php">Tutorials</a></li>
+									</div>
+									</center>
+								</ul>
+							</th>
+                            <th>		
+								<ul class="ul">
+									<center>
+									<div class="cat">
+										<li><a href="tip.php">Teaching Tips</a></li>
+									</div>
+									</center>
+								</ul>
+							</th>
+						<tr>
+					</table> 
+        </div>	
+
+<div style="width: 75%;margin: auto; margin-top: 25px ">
+<center>
+<h2 style="color: darkslategray">Upload Tutorials</h2>
+<form action="tutorial.php" method="post" enctype="multipart/form-data">
+
+    <label for="caption">Enter a Caption</label><br>
+  <input type="text" id="caption" name="caption" style="width: 400px" class="input-design" ><br><br>
+  
+  <label for="description">Enter the description</label><br>
+  <textarea id="description" name="description" rows="4" cols="60" class="input-design"></textarea><br><br>
+<br>
+    <label for="caption">Enter the module (A or B)</label><br>
+  <input type="text" id="module" name="module" style="width: 75px" class="input-design" ><br><br>
+    
+
+  <label for="myfile">Select files:</label><br>
+  <input type="file" id="myfile" name="file" multiple class="input-design"><br><br>
+  <input type="submit" name="submit" class="submit">
+</form>
+</center>
+</div>
+
+</div>
+</div>
+    
+<br>
+
+<!--footer-->
   <div class="footer">
 	<div class="containerPostNew">
     
@@ -178,12 +186,6 @@ session_start();
 			</div>
       </div>	
 </div>
-            <!--JavaScript--> 
-        <script>
-            function myFunction() {
-            alert("Your feedback is submitted successfully!");
-            }   
-        </script>
 
 </body>
 </html>

@@ -23,6 +23,7 @@ session_start();
       <a href="aboutus.php">About Us</a>
       <a href="contactus.php">Contact Us</a>
       <a href="myAccount.php">My Account</a>
+      <a style="background-color: red;" class="active" href="TrainerAccount.php">Trainer Dashboard</a>
       
       <input class="search" type="text" placeholder="  search here">
 
@@ -54,7 +55,21 @@ session_start();
       /////////////////////////////////////////////////////////////////////////////////////
       ?>
 
-<img class="logpic" src="images/usericon.png"> 
+<!--<img class="logpic" src="images/usericon.png"> -->
+<?php 
+      /////////////////////////////////////////////////////////////////////////////////////
+
+      if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) //if loggdin
+      {
+        echo '<img class="logpic" src="images/usergif.gif">';
+      }
+      else
+      {
+        echo '<img class="logpic" src="images/usericon.png">';
+      }
+
+      /////////////////////////////////////////////////////////////////////////////////////
+      ?>
   </div>
 </div>
 

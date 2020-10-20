@@ -10,8 +10,8 @@ $sql = "DELETE FROM video WHERE videoID='$videoID'";
     header("location: editcontent.php");
   } 
   else {
-    echo "Error deleting : " . $conn->error;
+    echo "Error deleting : " . $con->error;
   }
   
-  $conn->close();
+  $con->close();
   ?>

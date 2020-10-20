@@ -1,16 +1,16 @@
 <?php
 session_start();
 
-
-if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == true && $_SESSION["RegisterAs"] !== "Trainer") //if loggdin
+if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == true && $_SESSION["RegisterAs"] == "Trainer") //if loggdin
 {
+ 
   //stay
 }
 else
 {
-  
-  header("location:loginTeacher.php");
+  header("location:loginTrainer.php");
 }
+
 
 $errorMsg = "";
 $successMsg = "";
@@ -71,7 +71,7 @@ if (isset($_POST["UPDATE1"])) {
 
             WHERE userID = " . "$userID";
 
-  if ($con->query($sql) === FALSE) {
+  if ($connection->query($sql) === FALSE) {
     $errorMsg = "Something Went Wrong Please Try Again";
   } else {
     $successMsg = "User Details Updated Successfully";
@@ -82,14 +82,14 @@ if (isset($_POST['DELETE'])) {
   $pass = $_POST['pass'];
   $pass = sha1($pass);
   $sql = "SELECT pass FROM user WHERE userID =" . $_SESSION['userID'];
-  $result = $con->query($sql);
+  $result = $connection->query($sql);
   $row = $result->fetch_assoc();
   $oldpass = $row['pass'];
 
   if ($pass == $oldpass) {
     $sql = "DELETE FROM user WHERE userID =" . $_SESSION['userID'];
 
-    if ($con->query($sql) == TRUE) {
+    if ($connection->query($sql) == TRUE) {
       $_SESSION = array();
       session_destroy();
       header("location:signup.php");
@@ -116,7 +116,7 @@ if (isset($_POST["UPDATEPASSWORD"]))
   
 
   $sql = "SELECT pass FROM user WHERE userID =" . $_SESSION['userID'];
-  $result = $con->query($sql);
+  $result = $connection->query($sql);
   $row = $result->fetch_assoc();
   $storedpass = $row['pass'];
   echo "<script> console.log('".$storedpass."'); </script>";
@@ -134,7 +134,7 @@ if (isset($_POST["UPDATEPASSWORD"]))
       
       $sql = "UPDATE user SET pass='" . $newPass . "' WHERE userID = " . "$userID";
 
-      if ($con->query($sql) === FALSE) 
+      if ($connection->query($sql) === FALSE) 
       {
         $errorMsg = "Something Went Wrong Please Try Again";
       } 
@@ -196,7 +196,7 @@ $con->close();
       <a href="payment.php">Pricing</a>
       <a href="aboutus.php">About Us</a>
       <a href="contactus.php">Contact Us</a>
-      <a class="active" href="myAccount.php">My Account</a>
+      <a href="myAccount.php">My Account</a>
       <a style="background-color: red;" class="active" href="TrainerAccount.php">Trainer Dashboard</a>
       
       <input class="search" type="text" placeholder="  search here">
@@ -231,6 +231,8 @@ $con->close();
       /////////////////////////////////////////////////////////////////////////////////////
       ?>
       
+      <!--<img class="logpic" src="images/usergif.gif">-->
+
       <?php 
       /////////////////////////////////////////////////////////////////////////////////////
 
@@ -245,6 +247,8 @@ $con->close();
 
       /////////////////////////////////////////////////////////////////////////////////////
       ?>
+
+
     </div>
   </div>
 
@@ -253,7 +257,7 @@ $con->close();
 
   <div class="Contentbanner">
     <br>
-    <h1> My Account </h1>
+    <h1> Trainer Dashboard </h1>
 
     <h2 style="margin-left:50px; margin-top: -50px; color:white;"><?php echo "$greeting";
                                                                   echo " ";
@@ -310,6 +314,22 @@ $con->close();
   </div>
 
 
+  <div style="margin-left: 140px; color: #212121;"><h2>Upload Contents</h2></div>
+
+  <div style="margin-left: 100px; margin-top:-50px; width: 10%;">
+
+    <img src="images/upload.png" style="width:32px;height:26px;">
+    <br><br>
+    <input type="submit" onclick="document.location='uploadcontents.php'" id="submit_button" class="uploadButton" name="UPLOAD" value="UPLOAD">
+    <br><br><br>
+    <input type="submit" onclick="document.location='listContentforEdit.php'" id="submit_button" class="uploadButton2" name="UPLOAD" value="EDIT CONTENT">
+
+
+
+  </div>
+  <br>
+
+  
 
   <div style="margin-left: 100px;width: 10%; margin-top: 10px">
 
@@ -318,7 +338,7 @@ $con->close();
 
 
   </div>
-
+  
   <h4 style=" margin-left: 140px; margin-top: -25px; color: #212121;">Account Details</h4>
   <br>
 
@@ -351,6 +371,8 @@ $con->close();
       <input type="submit" id="submit_button" class="submitButton" name="UPDATE1" value="UPDATE">
     </form>
   </div>
+  
+  
   <br>
   <form action="myAccount.php" method="POST">
     <h4 style="color: red; padding:0px; margin-left:140px;">Enter Your Current Password to Delete Your Account</h4>

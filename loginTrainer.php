@@ -2,26 +2,28 @@
 session_start();
 
 $errors="";
+$msg3="";
+$msg4="";
+$icon="";
 
 
 //check for form submission
 
 if (isset($_POST['login']))
 {
-    $errors= array();
+    
 
     if (!isset($_POST['email']) || strlen(trim($_POST['email'])) < 1)
     {
-       $errors[]='Username is missing or Invalid'; 
+       $errors='Username is missing or Invalid'; 
        
-       echo "<script>console.log('Um in');</script>";
        
 
     }
 
     if (!isset($_POST['pass']) || strlen(trim($_POST['pass'])) < 1)
     {
-       $errors[]='Invalid Password'; 
+       $errors='Invalid Password'; 
        
 
     }
@@ -33,31 +35,36 @@ if (isset($_POST['login']))
 
 
     $sql = "SELECT * FROM user WHERE email = '{$email}' AND pass ='{$pass}'";
-    $result = $connection->query($sql);
+    $result = $con->query($sql);
 
     if ($result->num_rows > 0) 
     {
         // output data of each row
-        while($row = $result->fetch_assoc()) 
-        {
+        $row = $result->fetch_assoc() ;
+        
             $_SESSION['loggedin'] = TRUE ;
-            $_SESSION['userid'] = $row['userID'];
+            $_SESSION['userID'] = $row['userID'];
             $_SESSION['email'] = $row['email'];
             $_SESSION['fname'] = $row['fname'];
+            $_SESSION['lname'] = $row['lname'];
+            $_SESSION['RegisterAs'] = $row['RegisterAs'];
+            $_SESSION['last_login'] = $row['last_login'];
+            $_SESSION['sch'] = $row['sch'];
 
-            header("location:myAccount.php");
-            $msg3="Please Wait...Redirecting to the My Account Page";
+            header('refresh:3; url=TrainerAccount.php');
+            $msg3="Please Wait...Redirecting to the Trainer Dashboard";
+            $msg4="Successfully Logged in";
+            $icon='<img src="images/loading.gif">';
 
 
 
-        }
+        
     } 
     else 
     {
         $errors="Invalid Login. Please check the email & Password";
     }
-
-    $connection->close();
+$con->close();
 
 }
 
@@ -83,6 +90,7 @@ if (isset($_POST['login']))
       <a href="aboutus.php">About Us</a>
       <a href="contactus.php">Contact Us</a>
       <a href="myAccount.php">My Account</a>
+      <a style="background-color: red;" class="active" href="TrainerAccount.php">Trainer Dashboard</a>
       
       <input class="search" type="text" placeholder="  search here">
 
@@ -92,6 +100,10 @@ if (isset($_POST['login']))
   </div>
 </div>
 <h4 style="margin-left: 750px; margin-top: 10px; color:red;"> <?php echo $errors ?></h4> 
+<h3 style="margin-left: 860px; margin-top: 10px; color:#1e90ff;"> <?php echo "$msg4"; ?></h3>
+<h3 style="margin-left: 750px; margin-top: 10px; color:#1e90ff;"> <?php echo "$msg3"; ?></h3>
+
+<icon style="margin-left: 850px; margin-top: -10px;"><?php echo $icon; ?></icon>
 
 <div class="form-container">
     <div  class="body" style="padding:50px; text-align: center" >
@@ -99,7 +111,7 @@ if (isset($_POST['login']))
    
     <a  class="teacher" href="loginTeacher.php">Teacher</a>
     <a class="active"href="loginTrainer.php">Trainer</a><br><br><br>
-<form action="loginTeacher.php" method="POST">
+<form action="loginTrainer.php" method="POST">
     <input type="text" name="email"placeholder="Enter Trainer's Email"><br><br>
     <input type="password" placeholder="Enter Password" name="pass"> <br><br>
     <input type="checkbox" name="remember">Remember me<br><br>
