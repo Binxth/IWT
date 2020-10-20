@@ -259,3 +259,40 @@
     margin-left: 0px;
     margin-top: 0px;
   }
+
+  .uploadButton
+  {
+    background-color: #3fc300;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    font-weight: bold;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    width: 180px;
+    margin-left: 40px;
+    margin-top: 0px;
+
+  }
+
+  .uploadButton2
+  {
+
+    background-color: darkred;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    font-weight: bold;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    width: 180px;
+    margin-left: 40px;
+    margin-top: 0px;
+
+  }
