@@ -1,46 +1,60 @@
-
 <?php
 session_start();
 
-if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == true && $_SESSION["RegisterAs"] == "Trainer") //if loggdin
+if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) //checks the login
 {
- 
   //stay
 }
 else
 {
-  header("location:loginTrainer.php");
+  header("location:loginTeacher.php");
 }
+
+
 ?>
 
 <!DOCTYPE html>
+<?php 
+    require'config.php';
+    if(isset($_GET['moduleCode'])){
+        $moduleCode = $_GET['moduleCode'];
+    }
+    else{
+        $moduleCode = 'default';
+}  
+?>
+
 <html>
 <head>
 <title>BCC Online Teacher Trainer</title>
-<link rel="stylesheet" type="text/css" href="style/uploadcontent.css">
-<link rel="stylesheet" type="text/css" href="style/headerfooter.css">
+<link rel="stylesheet" type="text/css" href="style/style.css">
+<link rel="stylesheet" type="text/css" href="style/headerfooter.css">   
+<link rel="stylesheet" type="text/css" href="style/signup.css">
+<link rel="stylesheet" type="text/css" href="style/content.css">
 <script src="script/javascript.js"></script>
+<script src="script/signup.js"></script>
+
 </head>
 <body>
 
 <div class="header">
-    <a href="#default"></a>
-    <div class="header-left">
-    <img class="logo" src="images/logo2.png">
-    <a href="home.php">Home</a>
-      <a href="content.php">Contents</a>
+  <a href="#default"></a>
+  <div class="header-left">
+  <img class="logo" src="images/logo2.png">
+  <a href="home.php">Home</a>
+      <a class="active" href="content.php">Contents</a>
       <a href="payment.php">Pricing</a>
       <a href="aboutus.php">About Us</a>
       <a href="contactus.php">Contact Us</a>
       <a href="myAccount.php">My Account</a>
       <a style="background-color: red;" class="active" href="TrainerAccount.php">Trainer Dashboard</a>
       
-      <input class="search" type="text" value="  search here">
+      <input class="search" type="text" placeholder="  search here">
 
       <!--<a class="regbutton" href="#register">Register</a>
-	  <a class="logbutton" href="#login">Login</a>-->
-	  
-	  <?php 
+      <a class="logbutton" href="#login">Login</a>-->
+
+      <?php 
       /////////////////////////////////////////////////////////////////////////////////////
 
       if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) //if loggdin
@@ -64,8 +78,7 @@ else
         echo '<a class="logbutton" href="loginTeacher.php">Login</a>';
       }
       /////////////////////////////////////////////////////////////////////////////////////
-	  ?>
-	  
+      ?>
       <?php 
       /////////////////////////////////////////////////////////////////////////////////////
 
@@ -79,84 +92,48 @@ else
       }
 
       /////////////////////////////////////////////////////////////////////////////////////
-      ?> 
+      ?>    
   </div>
 </div>
 
-<div class="upload-header">
- <div style="text-align: center">
-  <h1 style="color: white">Upload Content</h1>
-  </div> 
-</div>
+
 <br> 
-
-<div class="div-upload">
-
-<div class="content-box">
-	
-		    <h2 align="center">Choose Content Type</h2>
-				<div class="select-cat">
-					<table align="center">
-						<tr>
-							<th>		
-								<ul class="ul">
-									<center>
-									<div class="cat">
-										<li><a href="uploadcontents.php">Videos</a></li>
-									</div>
-									</center>
-								</ul>
-							</th>
-			
-							<th>		
-								<ul class="ul">
-									<center>
-									<div class="cat">
-										<li><a href="tutorials.php">Tutorials</a></li>
-									</div>
-									</center>
-								</ul>
-							</th>
-                            <th>		
-								<ul class="ul">
-									<center>
-									<div class="cat">
-										<li><a href="tip.php">Teaching Tips</a></li>
-									</div>
-									</center>
-								</ul>
-							</th>
-						<tr>
-					</table> 
-        </div>	
-
-<div style="width: 75%;margin: auto; margin-top: 25px ">
-<center>
-<h2 style="color: darkslategray">Upload Teaching tips and tricks</h2>
-<form action="tips.php" method="post" enctype="multipart/form-data">
-
-    <label for="caption">Enter a Caption</label><br>
-  <input type="text" id="caption" name="caption" style="width: 400px" class="input-design" ><br><br>
-  
-  <label for="description">Enter the description</label><br>
-  <textarea id="description" name="description" rows="4" cols="60" class="input-design"></textarea><br><br>
-<br>
     
+<div class="Contentbanner">
+    <br>
+    <h1> Contents </h1>
+    </div>
+    <ul>
+        <li><a class="active" href="tipslisted.php">Teaching Tips</a></li>
+      </ul>
 
-  <label for="myfile">Select files:</label><br>
-  <input type="file" id="myfile" name="file" multiple class="input-design"><br><br>
-  <input type="submit" name="submit" class="submit">
-</form>
-</center>
-</div>
-
-</div>
-</div>
+<br><br><br>
     
-<br>
+<?php
+    
+        
+        $sql ="SELECT tipID, caption, description,file FROM teachingtips";
+		$result = $con->query($sql);
+        
+        echo "<h2 style='margin-left:500px;margin-bottom:50px'>Teaching Tips</h2>";
+        
+        if ($result -> num_rows > 0)	{
 
-<!--footer-->
-  <div class="footer">
+			while ($row = $result -> fetch_assoc())	{
+                echo "<div style='float:left; width:40%; margin-left:100px;'>
+                <a href ='".$row['file']."' alt='ad image'><img src='images/pdfs-512.png' height ='75px' width='60px'> </a>
+                <h4>".$row['caption']."</h4>
+                <p>".$row['description']."</p>
+                </div>
+                <br>";
+            }}
+    
+$con->close();
+
+     ?>
+
+
+<div class="footer">
 	<div class="containerPostNew">
     
 			<div class="boxEditPostNew">
