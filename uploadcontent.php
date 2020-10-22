@@ -61,7 +61,7 @@ if (isset($_POST['submit']))    {
         echo "Uploaded successfully - is a lie ". $con->error;
     }
 
-header("location: index.html"); }
+header("location: uploadcontents.php"); }
 
 $con->close();
 ?>
