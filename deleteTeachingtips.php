@@ -7,7 +7,7 @@ $tipID = $_GET['tipID'];
 $sql = "DELETE FROM teachingtips WHERE tipID='$tipID'";
 
   if ($con->query($sql) === TRUE) {
-    header("location: editcontent.php");
+    header("location: listContentforEdit.php");
   } 
   else {
     echo "Error deleting : " . $conn->error;
