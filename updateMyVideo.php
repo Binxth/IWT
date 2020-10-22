@@ -5,26 +5,20 @@ $videoID = $_GET['videoID'];
 
     $caption = $_POST["caption"];
     $description = $_POST["description"];
-    $moduleCode = $_POST["moduleCode"];
-    
-    if ($moduleCode =='A'){
-        $moduleCode =1;
-    }
-    else {$moduleCode=2;}
+    $module = $_POST["module"];
 
 
-    $sql = "UPDATE video SET caption='$caption',description='$description',moduleCode='$moduleCode'
+    $sql = "UPDATE video SET caption='$caption',description='$description',module='$module'
       WHERE videoID='$videoID'";
 
     if ($con->query($sql))  {
         echo "Uploaded successfully";
-        header("location: listContentforEdit.php"); 
     }
     else    {
         echo "Uploaded successfully - is a lie ". $con->error;
     }
 
-
+header("location: editcontent.php"); 
 
 $con->close();
 ?>

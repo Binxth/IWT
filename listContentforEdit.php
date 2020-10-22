@@ -109,10 +109,6 @@ else
 		if ($result -> num_rows > 0)	{
 
 			while ($row = $result -> fetch_assoc())	{
-                if ($row["moduleCode"]==1){
-                $row["moduleCode"]='A';
-                }
-                else {$row["moduleCode"]='B';}
 				echo "<div>
                 
                                 <video width='320' height='240' controls>

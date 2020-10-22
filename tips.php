@@ -53,7 +53,7 @@ if(isset($_POST['submit'])){
     }
     
 
-header("location: uploadcontents.php"); 
+header("location: index.html"); 
 }
 
 $con->close();

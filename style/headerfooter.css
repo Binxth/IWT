@@ -1,6 +1,6 @@
 body { 
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
 }
 .logpic{
     float:right;
@@ -127,6 +127,7 @@ button{
 	background-color: #f1f1f1;
     overflow:hidden;
     padding: 5px 0px;
+  margin-bottom:-200px;
   }
             
 

@@ -61,17 +61,11 @@
 		require'config.php';
 
         $videoID = $_GET['videoID'];
-		$sql ="SELECT videoID, caption, description,moduleCode,file FROM video WHERE videoID ='$videoID'";
+		$sql ="SELECT videoID, caption, description,module,file FROM video WHERE videoID ='$videoID'";
 		$result = $con->query($sql);
-    
 
 		while ($row = $result -> fetch_assoc())	{
-            
-            if ($row["moduleCode"]==1){
-                $row["moduleCode"]='A';
-            }
-            else {$row["moduleCode"]='B';}
-            
+
 				echo '<div style="width: 75%;margin: auto; margin-top: 25px ">
                         <center>
                         <h2 style="color: darkslategray">Edit Video</h2>
@@ -84,7 +78,7 @@
                           <textarea id="description" name="description" rows="4" cols="60" class="input-design" >'.$row["description"].'</textarea><br><br>
                         <br>
                             <label for="caption">Enter the module (A or B)</label><br>
-                          <input type="text" id="moduleCode" name="moduleCode" style="width: 75px" class="input-design" value="'.$row["moduleCode"].'" ><br><br>
+                          <input type="text" id="module" name="module" style="width: 75px" class="input-design" value="'.$row["module"].'" ><br><br>
 
                           <input type="submit" class="submit">
                         </form>
