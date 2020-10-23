@@ -99,7 +99,7 @@ else
 								<ul class="ul">
 									<center>
 									<div class="cat">
-										<li><a href="uploadcontent.html">Videos</a></li>
+										<li><a href="uploadcontents.php">Videos</a></li>
 									</div>
 									</center>
 								</ul>

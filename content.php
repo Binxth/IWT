@@ -108,27 +108,32 @@ else
     <h2 style=" margin-left: 40px;">POPULAR MODULES</h2>
     <br>
     <ul>
-        <li><a class="active" href="content.php?moduleCode=1">Module A</a></li>
-        <li><a class="active" href="content.php?moduleCode=2">Module B</a></li>
+        <li><a class="" href="content.php?moduleCode=1">Module A</a></li>
+        <li><a class="" href="content.php?moduleCode=2">Module B</a></li>
+        <li><a class="" href="tipslisted.php">Teaching Tips</a></li>
       </ul>
 
       <input type="text" placeholder="  Search.." class="contentSearch">
 <br><br><br>
     
 <?php
-    
+    //if user selects 1st module
     if ($moduleCode=="default" ||$moduleCode==1 ){
+        
+        
         
         $sql ="SELECT videoID, caption, description,moduleCode,file FROM video WHERE moduleCode=1";
 		$result = $con->query($sql);
+        
+        echo "<h2 style='margin-left:500px;'>Videos</h2>";
         
         if ($result -> num_rows > 0)	{
 
 			while ($row = $result -> fetch_assoc())	{
         
 
-      echo "<div>
-            <video width='320' height='240' controls>
+      echo "<div style='float:left; width:40%;margin-left:100px;'>
+            <video width='280' height='180' controls>
             <source src='".$row['file']."' alt='video'>
             Your browser does not support the video tag.
              </video>
@@ -136,20 +141,21 @@ else
 			<p>".$row['description']."</p>
             <p>Module : ".$row['moduleCode']."</p>
 			</div>
-             <br>"; 
+             "; 
             }
         }
     
     
         $sql ="SELECT tuteID, caption, description,moduleCode,file FROM tutorials WHERE moduleCode=1";
         $result = $con->query($sql);
+        echo "<h2 style='margin-top:50px;margin-left:500px;float:left;width:100%'>Tutorials</h2>";
         
         if ($result -> num_rows > 0)	{
 
 			while ($row = $result -> fetch_assoc())	{
         
 
-      echo "<div>
+      echo "<div style='float:left; width:40%; margin-left:100px;'>
             <a href ='".$row['file']."' alt='ad image'><img src='images/pdfs-512.png' height ='75px' width='60px'> </a>
             <h4>".$row['caption']."</h4>
 			<p>".$row['description']."</p>
@@ -157,21 +163,24 @@ else
 			</div>
             <br>";
             }
-        }
+        } 
     }
     
+    
+    //if user selects second module
     elseif($moduleCode=="2") {
         echo "<h2></h2>";
         
         $sql ="SELECT videoID, caption, description,moduleCode,file FROM video WHERE moduleCode=2";
 		$result = $con->query($sql);
+        echo "<h2 style='margin-left:500px;'>Videos</h2>";
         
         if ($result -> num_rows > 0)	{
 
 			while ($row = $result -> fetch_assoc())	{
         
 
-      echo "<div>
+      echo "<div style='float:left; width:40%;margin-left:100px;'>
             <video width='320' height='240' controls>
             <source src='".$row['file']."' alt='video'>
             Your browser does not support the video tag.
@@ -186,13 +195,14 @@ else
           
                 $sql ="SELECT tuteID, caption, description,moduleCode,file FROM tutorials WHERE moduleCode=2";
                 $result = $con->query($sql);
+        echo "<h2 style='margin-top:50px;margin-left:500px;float:left;width:100%'>Tutorials</h2>";
                 
                 if ($result -> num_rows > 0)	{
 
 			while ($row = $result -> fetch_assoc())	{
         
 
-              echo "<div>
+              echo "<div style='float:left; width:40%;margin-left:100px;'>
                 <a href ='".$row['file']."' alt='ad image'><img src='images/pdfs-512.png' height ='75px' width='60px'> </a>
                 <h4>".$row['caption']."</h4>
                 <p>".$row['description']."</p>

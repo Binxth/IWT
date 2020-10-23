@@ -9,7 +9,7 @@
 .div-upload{
     width:75%;
     padding: 30px 30px 40px 30px;
-    height: 500px;
+    height: 600px;
     margin: auto;
    
 }
@@ -22,6 +22,27 @@
 			height:100%;
 			
 }
+
+.div-editcontent{
+    width:100%;
+    padding-bottom: 20px;
+    margin: auto;
+   
+}
+
+.edit-content-box{
+	        background-color:lightgrey;
+			border-radius: 10px;
+			padding:5px;
+			height:100%;	
+}
+
+.edit-content-cont{
+    float: left;
+    padding-left:10px;
+}
+
+
 
 .select-cat{
 	background-color:dodgerblue;
@@ -58,7 +79,6 @@ text-decoration: none;
       margin-left: 30px; 
       border: 1px solid #ccc; 
       border-radius: 4px;
-
 }
 
 .bttn{
