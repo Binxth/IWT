@@ -1,7 +1,7 @@
 <?php
 require 'config.php';
 session_start();
-echo $_SESSION['userID'];
+//echo $_SESSION['userID'];
 if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == true) //if loggdin
 {
   //stay
