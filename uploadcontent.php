@@ -1,26 +1,25 @@
 <?php
 
 require'config.php';
-echo "cat2";
 
 
 if (isset($_POST['submit']))    {
-    echo "cat2";
+    
     $file = $_FILES['file'];
     $fileName = $_FILES['file']['name'];
     $fileSize = $_FILES['file']['size'];
     $fileTmpName = $_FILES['file']['tmp_name'];
     $fileError = $_FILES['file']['error'];
-
+    
+    
     $caption = $_POST["caption"];
     $description = $_POST["description"];
     $module = $_POST["module"];
-
-    $fileExt = explode('.', $fileName); //separate file extenstion from the file name 
-    $fileActualExt = strtolower(end($fileExt)); //get the file extenstion and make is lowercase (incase if it is uppercase)
-    $fileNameNew = uniqid('',true).".".$fileActualExt; //creates a unique name with uploaded time in micro-seconds for the image so it wont get a chance to be replaced by an file with the same name
-    $fileDestination = 'upload/'.$fileNameNew; //creates the destination path inorder to save the image with the unique file name 
-    move_uploaded_file($fileTmpName, $fileDestination); // moves the file from temporary location to the path created above
+   
+    if ($fileError === 0)  {
+    $fileDestination = 'upload/'.$fileName; 
+    move_uploaded_file($fileTmpName, $fileDestination);
+    }
 
 
     
@@ -41,7 +40,7 @@ if (isset($_POST['submit']))    {
     else    {
         echo "Uploaded successfully - is a lie ". $con->error;
     }
-
+}
 header("location: uploadcontents.php"); }
 
 $con->close();

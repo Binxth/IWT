@@ -355,7 +355,7 @@ $con->close();
   <form action="myAccount.php" method="POST">
     <h4 style="color: red; padding:0px; margin-left:140px;">Enter Your Current Password to Delete Your Account</h4>
     <br>
-    <p style="color: grey; margin-top:-30px; margin-left:140px;">If you deleted your BCC Account, you can't able to get it back</p>
+    <p style="color: grey; margin-top:-30px; margin-left:140px;">If you deleted your BCC Account, you will not be able to get it back</p>
     <br>
 
     <div style=" margin-left: 140px; margin-top: -25px; color: #212121;">

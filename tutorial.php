@@ -15,11 +15,10 @@ if(isset($_POST['submit'])){
     $description = $_POST["description"];
     $module = $_POST["module"];
 
-    $fileExt = explode('.', $fileName); //separate file extenstion from the file name 
-    $fileActualExt = strtolower(end($fileExt)); //get the file extenstion and make is lowercase (incase if it is uppercase)
-    $fileNameNew = uniqid('',true).".".$fileActualExt; //creates a unique name with uploaded time in micro-seconds for the image so it wont get a chance to be replaced by an file with the same name
-    $fileDestination = 'upload/'.$fileNameNew; //creates the destination path inorder to save the image with the unique file name 
-    move_uploaded_file($fileTmpName, $fileDestination); // moves the file from temporary location to the path created above
+    if ($fileError === 0)  {
+    $fileDestination = 'upload/'.$fileName; 
+    move_uploaded_file($fileTmpName, $fileDestination);
+    }
     
     if ($module=="A"){
         $module=1;  
