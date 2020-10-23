@@ -139,7 +139,6 @@ else
              </video>
 			<h4>".$row['caption']."</h4>
 			<p>".$row['description']."</p>
-            <p>Module : ".$row['moduleCode']."</p>
 			</div>
              "; 
             }
@@ -159,7 +158,6 @@ else
             <a href ='".$row['file']."' alt='ad image'><img src='images/pdfs-512.png' height ='75px' width='60px'> </a>
             <h4>".$row['caption']."</h4>
 			<p>".$row['description']."</p>
-            <p>Module : ".$row['moduleCode']."</p>
 			</div>
             <br>";
             }
@@ -187,7 +185,6 @@ else
              </video>
 			<h4>".$row['caption']."</h4>
 			<p>".$row['description']."</p>
-            <p>Module : ".$row['moduleCode']."</p>
 			</div>
              <br>";
             }
@@ -206,7 +203,6 @@ else
                 <a href ='".$row['file']."' alt='ad image'><img src='images/pdfs-512.png' height ='75px' width='60px'> </a>
                 <h4>".$row['caption']."</h4>
                 <p>".$row['description']."</p>
-                <p>Module : ".$row['moduleCode']."</p>
                 </div>
                 <br>";
                 }
